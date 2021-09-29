@@ -1,5 +1,8 @@
+import { Redirect } from "react-router-dom";
+
 import Authentification from "../pages/Authentification";
 import Verification from "../pages/Verification";
+import Vote from "../pages/Vote";
 
 export const routes = [
   {
@@ -15,11 +18,11 @@ export const routes = [
   {
     path: "/vote",
     exact: true,
-    component: () => <></>,
+    component: Vote,
   },
   {
     path: "*",
     exact: true,
-    component: Authentification,
+    component: () => <Redirect to="/vote" />,
   },
 ];
