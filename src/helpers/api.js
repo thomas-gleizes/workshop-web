@@ -8,8 +8,8 @@ const appAxios = axios.create({
 const Api = {
   login: (payload) => appAxios.post("/polls/login/", payload),
   verify: (payload) => appAxios.post("/polls/auth/", payload),
+  candidates: () => appAxios.get("/polls/accueil/"),
+  vote: (payload) => appAxios.post("/polls/vote/", payload),
 };
 
 export default Api;
-
-console.log("AppAxios()", appAxios());

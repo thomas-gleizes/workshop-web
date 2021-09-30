@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { FaSpinner } from "react-icons/fa";
 
 import Api from "../helpers/api";
 import addToast, { TOAST_ERROR } from "../helpers/toastr";
+import { IS_LOGIN } from "../helpers/localstorageKey";
 import Field from "./form/Field";
 import FeedBack from "./form/FeedBack";
-import { FaSpinner } from "react-icons/fa";
 
 const ValidateLogin = ({ token }) => {
   const [loading, setLoading] = useState(false);
@@ -36,12 +37,12 @@ const ValidateLogin = ({ token }) => {
       const response = await Api.verify(formData);
 
       if (response.status === 200) {
-        console.log("Response", response);
+        localStorage.setItem(IS_LOGIN, "oui");
       }
     } catch (e) {
       addToast("Code invalide !", TOAST_ERROR);
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   };
 
@@ -58,7 +59,7 @@ const ValidateLogin = ({ token }) => {
               type="button"
               disabled={loading}
               onClick={handleBack}
-              className="w-1/4 mr-3 px-8 py-2 shadow-lg hover:shadow bg-gray-200 disabled:opacity-50 text-center disabled:bg-red-500 rounded text-lg transition duration-100"
+              className="w-1/4 mr-3 px-8 py-2 shadow-lg hover:shadow bg-gray-200 disabled:opacity-50 text-center rounded text-lg transition duration-100"
             >
               Retour
             </button>

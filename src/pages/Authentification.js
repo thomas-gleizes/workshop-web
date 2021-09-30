@@ -5,6 +5,8 @@ import { useStorage } from "../helpers/hooks";
 import { AUTH_TOKEN, IS_LOGIN } from "../helpers/localstorageKey";
 import LoginForm from "../components/LoginForm";
 
+import franceConnect from "../assets/img/Illustration-FranceConnect.png";
+
 const Authentification = () => {
   const isLog = useStorage(IS_LOGIN);
   const token = useStorage(AUTH_TOKEN);
@@ -13,8 +15,11 @@ const Authentification = () => {
   if (token) return <Redirect to={`/authentification/verification/${token}`} />;
 
   return (
-    <div className="mx-auto">
-      <LoginForm />
+    <div className="mx-4 my-3 bg-grey-100 max-w-700 border bg-grey-50 rounded shadow-xl px-9 py-2">
+      <img className="mx-auto" width={400} src={franceConnect} alt="france connect" />
+      <div className="w-10/12 mx-auto">
+        <LoginForm />
+      </div>
     </div>
   );
 };
