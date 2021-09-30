@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react";
 
-const LOGIN_KEY = "isLogin";
-
-const getStorage = () => !!window.localStorage.getItem(LOGIN_KEY);
-
-const useLogin = () => {
-  const [log, setLog] = useState(getStorage());
+const useLogin = (key) => {
+  const [state, setState] = useState(window.localStorage.getItem(key));
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      const state = getStorage();
-      if (state !== log) setLog(state);
+      const storage = window.localStorage.getItem(key);
+
+      if (storage !== state) setState(storage);
     }, 100);
 
     return () => clearInterval(interval);
   }, []);
 
-  return !!log;
+  return state;
 };
 
 export default useLogin;

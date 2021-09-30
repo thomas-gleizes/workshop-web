@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { FaSpinner } from "react-icons/fa";
 
 import Api from "../helpers/api";
 import addToast, { TOAST_ERROR } from "../helpers/toastr";
+import { AUTH_TOKEN } from "../helpers/localstorageKey";
 import Field from "./form/Field";
 import FeedBack from "./form/FeedBack";
 
@@ -14,12 +15,12 @@ const LoginForm = () => {
   const [loading, setLoading] = useState(false);
 
   const initialValues = {
-    identifiant: "29ské4Fksj42kfskfap4",
+    id: "kskZpogSjsfe",
     password: "azerty123",
   };
 
   const validationSchema = Yup.object().shape({
-    identifiant: Yup.string().required("Veuillez indiquer votre identifiant."),
+    id: Yup.string().required("Veuillez indiquer votre id."),
     password: Yup.string().required("Veuillez indiquer votre mot de passe."),
   });
 
@@ -27,10 +28,13 @@ const LoginForm = () => {
     try {
       setLoading(true);
 
-      const response = await Api.login(values);
+      const formData = new FormData();
+      formData.append("id", values.id);
+      formData.append("password", values.password);
 
-      if (response.data.success) {
-      }
+      const { data } = await Api.login(formData);
+
+      localStorage.setItem(AUTH_TOKEN, data.token);
     } catch (e) {
       addToast(e.error || "Une erreur est survenue", TOAST_ERROR);
     } finally {
@@ -41,39 +45,20 @@ const LoginForm = () => {
   return (
     <div className="mx-4 my-3 bg-grey-100 max-w-700 border bg-grey-50 shadow-lg px-9 py-2">
       <div>
-        <img
-          className="mx-auto"
-          width={400}
-          src={franceConnect}
-          alt="france connect"
-        />
+        <img className="mx-auto" width={400} src={franceConnect} alt="france connect" />
       </div>
       <div>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
+        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <div className="my-4">
                 <div className="mb-2">
-                  <Field
-                    type="text"
-                    name="identifiant"
-                    placeholder="identifiant"
-                    disabled={loading}
-                  />
-                  <FeedBack name="identifiant" />
+                  <Field type="text" name="id" placeholder="id" disabled={loading} />
+                  <FeedBack name="id" />
                 </div>
               </div>
               <div className="my-4">
-                <Field
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  disabled={loading}
-                />
+                <Field type="password" name="password" placeholder="password" disabled={loading} />
                 <FeedBack name="password" />
               </div>
               <div className="">

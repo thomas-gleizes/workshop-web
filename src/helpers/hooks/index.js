@@ -1,5 +1,5 @@
 import useToggle from "./useToggle";
 import useCallbackRef from "./useCallbackRef";
-import useLogin from "./useLogin";
+import useStorage from "./useLogin";
 
-export { useToggle, useCallbackRef, useLogin };
+export { useToggle, useCallbackRef, useStorage };

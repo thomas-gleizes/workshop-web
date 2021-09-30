@@ -6,9 +6,10 @@ const appAxios = axios.create({
 });
 
 const Api = {
-  get: () => appAxios.get("/"),
-  login: (data) => appAxios.post("/login", data),
-  verify: (data) => appAxios.post("/verify", data),
+  login: (payload) => appAxios.post("/polls/login/", payload),
+  verify: (payload) => appAxios.post("/polls/auth/", payload),
 };
 
 export default Api;
+
+console.log("AppAxios()", appAxios());

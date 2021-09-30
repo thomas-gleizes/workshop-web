@@ -48,7 +48,7 @@ module.exports = {
       backgroundColor: ["checked", "disabled", "group-focus"],
       backgroundOpacity: ["group-focus"],
       borderWidth: ["group-focus"],
-      opacity: ["group-focus"],
+      opacity: ["group-focus", "disabled"],
       borderColor: ["checked", "disabled"],
       boxShadow: ["active"],
       rotate: ["group-focus"],
