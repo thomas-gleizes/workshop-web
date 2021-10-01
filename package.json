@@ -6,7 +6,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:tailwind": "tailwindcss build -i src/assets/styles/global.css -o src/tailwind.output.css"
   },
   "dependencies": {
     "@craco/craco": "^6.2.0",
