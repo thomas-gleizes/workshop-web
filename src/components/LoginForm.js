@@ -14,23 +14,23 @@ const LoginForm = () => {
 
   const initialValues = {
     id: "kskZpogSjsfe",
-    password: "azerty123",
+    password: "azerty123"
   };
 
   const validationSchema = Yup.object().shape({
     id: Yup.string().required("Veuillez indiquer votre id."),
-    password: Yup.string().required("Veuillez indiquer votre mot de passe."),
+    password: Yup.string().required("Veuillez indiquer votre mot de passe.")
   });
 
   const handleSubmit = async (values) => {
     try {
       setLoading(true);
 
-      const formData = new FormData();
-      formData.append("id", values.id);
-      formData.append("password", values.password);
+      // const formData = new FormData();
+      // formData.append("id", values.id);
+      // formData.append("password", values.password);
 
-      const { data } = await Api.login(formData);
+      const { data } = await Api.login({ ...values });
 
       localStorage.setItem(AUTH_TOKEN, data.token);
     } catch (e) {

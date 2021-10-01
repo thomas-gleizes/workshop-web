@@ -6,10 +6,10 @@ const appAxios = axios.create({
 });
 
 const Api = {
-  login: (payload) => appAxios.post("/polls/login/", payload),
-  verify: (payload) => appAxios.post("/polls/auth/", payload),
-  candidates: () => appAxios.get("/polls/accueil/"),
-  vote: (payload) => appAxios.post("/polls/vote/", payload),
+  login: (payload) => appAxios.post("/api/login", payload),
+  verify: (payload) => appAxios.post("/api/auth", payload),
+  candidates: () => appAxios.get("/api/accueil"),
+  vote: (payload) => appAxios.post("/api/vote", payload),
 };
 
 export default Api;

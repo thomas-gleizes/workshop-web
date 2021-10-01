@@ -57,7 +57,7 @@ const ValidateLogin = ({ token }) => {
           <div className="w-full mx-auto mt-5">
             <Field
               name="code"
-              placeholder="Code (pour passer cette étape: 0000)       "
+              placeholder="Code (pour passer cette étape: 0000)"
               maxLength={4}
               disabled={loading}
             />
