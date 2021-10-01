@@ -28,21 +28,18 @@ const ValidateLogin = ({ token }) => {
 
   const handleSubmit = async (values) => {
     try {
-      if (values.code === "0000") {
-        setTimeout(() => localStorage.setItem(IS_LOGIN, "oui"), 3000);
-      } else {
-        setLoading(true);
+      setLoading(true);
 
-        // const formData = new FormData();
-        // formData.append("auth", values.code);
-        // formData.append("token", token);
+      // const formData = new FormData();
+      // formData.append("auth", values.code);
+      // formData.append("token", token);
 
-        const response = await Api.verify({ token, code: values.code });
+      const response = await Api.verify({ token, code: values.code });
 
-        if (response.status === 200) {
-          localStorage.setItem(IS_LOGIN, "oui");
-        }
+      if (response.status === 200) {
+        localStorage.setItem(IS_LOGIN, "oui");
       }
+
     } catch (e) {
       addToast("Code invalide !", TOAST_ERROR);
     } finally {
