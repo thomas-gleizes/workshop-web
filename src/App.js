@@ -13,11 +13,11 @@ const App = () => {
   return (
     <div className="">
       <header>
-        <div className="w-full px-10 py-2 bg-gray-50 shadow-xl">
+        <div className="w-full flex justify-between px-10 py-2 bg-gray-50 shadow-xl">
           <img src={logo} alt={logo} className="w-20" />
 
-          <div className="">
-            {isLogin && <button className="px-5 py-2 bg-blue-500 text-white rounded"> Déconnexion</button>}
+          <div className="my-auto">
+            {!isLogin && <button onClick={() => localStorage.clear()} className="px-5 py-2 bg-blue-500 text-white rounded"> Déconnexion</button>}
           </div>
         </div>
       </header>
