@@ -28,65 +28,65 @@ const Vote = () => {
               nom: "Melanchon",
               prenom: "Jean-Luc",
               parti: "a france insoumise",
-              description: "Travailler moins pour gagner plus (ou pas)",
+              description: "Travailler moins pour gagner plus (ou pas)"
             },
             {
               id: 2,
               nom: "Asselineau",
               prenom: "Francois",
               parti: "Union populaire républicaine",
-              description: "C'est pas faux",
+              description: "C'est pas faux"
             },
             {
               id: 3,
               nom: "Le Pen",
               prenom: "Marine",
               parti: "Rassemblement nationnal",
-              description: "Liberté liberté chérie",
+              description: "Liberté liberté chérie"
             },
             {
               id: 4,
               nom: "Poisson",
               prenom: "Jean-Frédéric",
               parti: "La voix du peuple",
-              description: "L'humilité, c'est pas quand il ya des infiltrations",
+              description: "L'humilité, c'est pas quand il ya des infiltrations"
             },
             {
               id: 5,
               nom: "Dupont-Aignan",
               prenom: "Nicolas",
               parti: "Debout la france",
-              description: "Arthour, pas changer assiette pour fromage",
+              description: "Arthour, pas changer assiette pour fromage"
             },
             {
               id: 6,
               nom: "Arthaud",
               prenom: "Nathalie",
               parti: "Lutte ouvriere",
-              description: "Vous avez parlé de votre amitié avec une truite",
+              description: "Vous avez parlé de votre amitié avec une truite"
             },
             {
               id: 7,
               nom: "Roussel",
               prenom: "Fabien",
               parti: "Parti communiste français",
-              description: "Je crois qu’il faut que vous arrêtiez d’essayer de dire des trucs ",
+              description: "Je crois qu’il faut que vous arrêtiez d’essayer de dire des trucs "
             },
             {
               id: 8,
               nom: "Poutou",
               prenom: "Philippe",
               parti: "Parti anti-capitaliste",
-              description: "Au bûcher ",
+              description: "Au bûcher "
             },
             {
               id: 9,
               nom: "Bertrand",
               prenom: "Xavier",
               parti: "Les républicains",
-              description: "Elle est où la poulette ?",
-            },
-          ],
+              description: "Elle est où la poulette ?"
+            }
+          ]
         ]);
       }
     })();
@@ -99,7 +99,7 @@ const Vote = () => {
       formData.append("token", token);
       formData.append("candidat", candidat);
 
-      const response = await Api.vote(formData);
+      const response = await Api.vote({ candidat, token });
 
       console.log("Response", response);
       addToast("Votre vote a été pris en compte", TOAST_SUCCESS);

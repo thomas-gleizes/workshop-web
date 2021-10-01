@@ -13,13 +13,13 @@ const ValidateLogin = ({ token }) => {
   const [loading, setLoading] = useState(false);
 
   const initialValues = {
-    code: "",
+    code: ""
   };
 
   const validationSchema = Yup.object().shape({
     code: Yup.string()
       .test("min length", "La taille du code est invalide.", (value) => value?.length >= 4)
-      .required("Veuillez renseigner votre code"),
+      .required("Veuillez renseigner votre code")
   });
 
   const handleBack = () => {
@@ -33,11 +33,11 @@ const ValidateLogin = ({ token }) => {
       } else {
         setLoading(true);
 
-        const formData = new FormData();
-        formData.append("auth", values.code);
-        formData.append("token", token);
+        // const formData = new FormData();
+        // formData.append("auth", values.code);
+        // formData.append("token", token);
 
-        const response = await Api.verify(formData);
+        const response = await Api.verify({ token, code: values.code });
 
         if (response.status === 200) {
           localStorage.setItem(IS_LOGIN, "oui");
