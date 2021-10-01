@@ -17,7 +17,7 @@ const App = () => {
           <img src={logo} alt={logo} className="w-20" />
 
           <div className="my-auto">
-            {!isLogin && <button onClick={() => localStorage.clear()} className="px-5 py-2 bg-blue-500 text-white rounded"> Déconnexion</button>}
+            {isLogin && <button onClick={() => localStorage.clear()} className="px-5 py-2 bg-blue-500 text-white rounded"> Déconnexion</button>}
           </div>
         </div>
       </header>
