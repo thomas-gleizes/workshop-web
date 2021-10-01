@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 import "./assets/styles/global.css";
+import "./assets/styles/tailwind.css";
 
 ReactDOM.render(
   <BrowserRouter>

@@ -11,7 +11,7 @@ const App = () => {
   const isLogin = useStorage(IS_LOGIN);
 
   return (
-    <div className="">
+    <div>
       <header>
         <div className="w-full flex justify-between px-10 py-2 bg-gray-50 shadow-xl">
           <img src={logo} alt={logo} className="w-20" />
