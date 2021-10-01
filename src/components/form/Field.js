@@ -4,10 +4,7 @@ import { useField } from "formik";
 const Field = ({ name, ...rest }) => {
   const [field, meta] = useField(name);
 
-  const color = useMemo(
-    () => (meta.touched && meta.error ? "red" : "blue"),
-    [meta]
-  );
+  const color = useMemo(() => (meta.touched && meta.error ? "red" : "blue"), [meta]);
 
   return (
     <input

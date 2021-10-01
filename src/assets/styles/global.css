@@ -3,141 +3,142 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Marianne-Bold;
-  src: url("../fonts/Marianne-Bold.otf");
+    font-family: Marianne-Bold;
+    src: url("../fonts/Marianne-Bold.otf");
 }
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
-body{
-  margin: 0px;
-  padding: 0px;
-  padding-bottom: 50px;
+body {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 50px;
 }
 
 .separate {
-  width: 150px;
-  margin: auto;
+    width: 150px;
+    margin: auto;
 }
 
 .separate hr {
-  border-width: 3px;
+    border-width: 3px;
 }
 
 .body-candidat .card {
-  /* width: 355px;*/
-  max-width: 480px !important;
-  height: 500px;
-  background: #FFF;
-  top: 50%;
-  left: 50%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  overflow: hidden;
+    /* width: 355px;*/
+    max-width: 480px !important;
+    height: 500px;
+    background: #FFF;
+    top: 50%;
+    left: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
 
 }
+
 .card-header {
-  height: 150px;
-  background: linear-gradient(30deg, #fff, #000091);
+    height: 150px;
+    background: linear-gradient(30deg, #fff, #000091);
 }
 
-.card-header-img{
-  background: white;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  padding: 5px;
-  transform: translate(70%,42px);
+.card-header-img {
+    background: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 5px;
+    transform: translate(70%, 42px);
 }
 
-.card-header-img img{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.card-header-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
 
 .card-body {
-  height: 200px;
-  background: #FFF;
-  padding: 20px;
-  padding-top: 20px;
-  text-align: center;
-  margin-top: 80px;
+    height: 200px;
+    background: #FFF;
+    padding: 20px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 80px;
 }
 
 .card-body h3, h4 {
-  box-sizing: border-box;
-  line-height: 2.2;
-  font-weight: bold;
+    box-sizing: border-box;
+    line-height: 2.2;
+    font-weight: bold;
 }
 
 .card-body h4 {
-  color: #e92114;
-  opacity: .7;
-  font-weight: bold;
+    color: #e92114;
+    opacity: .7;
+    font-weight: bold;
 }
 
 .card-body p {
-  font-size: 16px;
-  color: gray;
-  margin-bottom: 30px;
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 30px;
 }
 
 .card-footer {
-  border-top: 2px solid #e5e7eb;
-  height: 50px;
-  padding: 20px;
+    border-top: 2px solid #e5e7eb;
+    height: 50px;
+    padding: 20px;
 }
 
 .card-footer .btn {
-  padding: 12px 20px;
-  background-color: #000091;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  font-size: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all .3s ease-in;
+    padding: 12px 20px;
+    background-color: #000091;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease-in;
 }
 
 .card-footer .btn:hover {
-  background: transparent;
-  color: #000091;
-  border: 2px solid #000091;
+    background: transparent;
+    color: #000091;
+    border: 2px solid #000091;
 }
 
 .card-body-img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
 }
 
-.card-body-img  img {
-  height: 100%;
-  width: auto;
+.card-body-img img {
+    height: 100%;
+    width: auto;
 }
 
 .footer {
-  height: 40px;
-  margin: 10px;
-  max-width: 480px !important;
+    height: 40px;
+    margin: 10px;
+    max-width: 480px !important;
 }
 
 .card-btn {
-  background-color: #000091;
-  color: #fff;
+    background-color: #000091;
+    color: #fff;
 }
 
 .card-btn:hover {
-  background: transparent;
-  color: #000091;
-  border: 2px solid #000091;
+    background: transparent;
+    color: #000091;
+    border: 2px solid #000091;
 }
 
 input, button, textarea {
-  outline: unset;
+    outline: unset;
 }

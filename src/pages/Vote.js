@@ -4,7 +4,6 @@ import { Redirect } from "react-router-dom";
 import { useStorage } from "../helpers/hooks";
 import { AUTH_TOKEN, IS_LOGIN } from "../helpers/localstorageKey";
 import Api from "../helpers/api";
-import { Form } from "formik";
 import addToast, { TOAST_ERROR, TOAST_SUCCESS } from "../helpers/toastr";
 
 const Vote = () => {
