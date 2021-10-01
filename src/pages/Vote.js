@@ -5,7 +5,7 @@ import { useStorage } from "../helpers/hooks";
 import { AUTH_TOKEN, IS_LOGIN } from "../helpers/localstorageKey";
 import Api from "../helpers/api";
 import { Form } from "formik";
-import addToast, { TOAST_ERROR } from "../helpers/toastr";
+import addToast, { TOAST_ERROR, TOAST_SUCCESS } from "../helpers/toastr";
 
 const Vote = () => {
   const [candidats, setCandidats] = useState([]);
@@ -103,7 +103,7 @@ const Vote = () => {
       const response = await Api.vote(formData);
 
       console.log("Response", response);
-      addToast("Votre vote a été pris en compte", TOAST_ERROR);
+      addToast("Votre vote a été pris en compte", TOAST_SUCCESS);
     } catch (e) {
       addToast("Une erreur est surenue lors du vote", TOAST_ERROR);
     }
