@@ -28,16 +28,20 @@ const ValidateLogin = ({ token }) => {
 
   const handleSubmit = async (values) => {
     try {
-      setLoading(true);
+      if (values.code === "0000") {
+        setTimeout(() => localStorage.setItem(IS_LOGIN, "oui"), 3000);
+      } else {
+        setLoading(true);
 
-      const formData = new FormData();
-      formData.append("auth", values.code);
-      formData.append("token", token);
+        const formData = new FormData();
+        formData.append("auth", values.code);
+        formData.append("token", token);
 
-      const response = await Api.verify(formData);
+        const response = await Api.verify(formData);
 
-      if (response.status === 200) {
-        localStorage.setItem(IS_LOGIN, "oui");
+        if (response.status === 200) {
+          localStorage.setItem(IS_LOGIN, "oui");
+        }
       }
     } catch (e) {
       addToast("Code invalide !", TOAST_ERROR);
@@ -51,7 +55,12 @@ const ValidateLogin = ({ token }) => {
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <div className="w-full mx-auto mt-5">
-            <Field name="code" placeholder="Code (exemple: 0000)" maxLength={4} disabled={loading} />
+            <Field
+              name="code"
+              placeholder="Code (pour passer cette étape: 0000)       "
+              maxLength={4}
+              disabled={loading}
+            />
             <FeedBack name="code" />
           </div>
           <div className="my-2 flex justify-center mt-14">
